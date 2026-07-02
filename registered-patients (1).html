@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registered Patients | Curonex — Medical Camp Management</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ TOP NAVBAR ============ -->
+<header class="topnav">
+  <div class="topnav-left">
+    <button class="icon-btn menu-btn" data-menu-toggle aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <svg class="logo-mark" viewBox="0 0 64 64" fill="none">
+      <rect x="0" y="0" width="64" height="64" rx="16" fill="#1976D2"/>
+      <path d="M27 16h10v11h11v10H37v11H27V37H16V27h11V16z" fill="#FFFFFF"/>
+      <path d="M42 16c0 4 3 5 3 9s-3 5-3 9" stroke="#7EC8FF" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="topnav-brand">
+      <span class="brand-name">Curonex</span>
+      <span class="brand-tagline">Medical Camp Management</span>
+    </div>
+  </div>
+
+  <div class="topnav-right">
+    <nav class="topnav-links">
+      <a href="admin.html">Dashboard</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="dropdown-wrap">
+      <button class="icon-btn" data-dropdown-toggle="notifPanel" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="notif-badge">3</span>
+      </button>
+      <div class="dropdown-panel" id="notifPanel">
+        <div class="dropdown-title">Notifications</div>
+        <a href="#" class="notif-item">
+          <span class="notif-title">Diabetes Screening Camp starts today</span>
+          <span class="notif-time">10 minutes ago</span>
+        </a>
+        <a href="#" class="notif-item">
+          <span class="notif-title">12 new patients registered for CMP-1041</span>
+          <span class="notif-time">2 hours ago</span>
+        </a>
+        <a href="#" class="notif-item">
+          <span class="notif-title">Pediatric Vaccination Drive marked completed</span>
+          <span class="notif-time">Yesterday</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="dropdown-wrap">
+      <button class="profile-chip" data-dropdown-toggle="profilePanel">
+        <span class="profile-avatar">AD</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dropdown-panel" id="profilePanel">
+        <div class="dropdown-title">Admin User</div>
+        <a href="#">My Profile</a>
+        <a href="#">Settings</a>
+        <button type="button">Log Out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay"></div>
+
+<div class="app-shell">
+
+  <!-- ============ LEFT SIDEBAR ============ -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <a href="admin.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Dashboard
+      </a>
+      <a href="add-camp.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="12" y1="13" x2="12" y2="18"/><line x1="9.5" y1="15.5" x2="14.5" y2="15.5"/></svg>
+        Add Camp
+      </a>
+      <a href="view-camps.html" class="sidebar-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        View Camps
+      </a>
+      <a href="#" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Specialist / Doctor Profile
+      </a>
+      <a href="#" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Reports
+      </a>
+    </nav>
+
+    <div class="sidebar-help">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div>
+        <div class="help-title">Need Help?</div>
+        <div class="help-desc">We are here to help you 24/7</div>
+        <a href="#">Support Center</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="main-content">
+    <div class="page-header">
+      <h1 class="h1">Registered Patients</h1>
+      <div class="breadcrumb">
+        <a href="admin.html">Dashboard</a>
+        <span class="sep">›</span>
+        <a href="view-camps.html">View Camp Data</a>
+        <span class="sep">›</span>
+        <span class="current">Registered Patients</span>
+      </div>
+    </div>
+
+    <!-- Camp summary -->
+    <section class="info-strip">
+      <div class="info-pill">
+        <div class="info-pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+        </div>
+        <div>
+          <div class="info-pill-label">Camp ID</div>
+          <div class="info-pill-value" id="infoCampId">—</div>
+        </div>
+      </div>
+      <div class="info-pill">
+        <div class="info-pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div>
+          <div class="info-pill-label">Camp Name</div>
+          <div class="info-pill-value" id="infoCampName">—</div>
+        </div>
+      </div>
+      <div class="info-pill">
+        <div class="info-pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="info-pill-label">Total Registrations</div>
+          <div class="info-pill-value" id="infoTotalReg">0</div>
+        </div>
+      </div>
+      <div class="info-pill">
+        <div class="info-pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+        </div>
+        <div>
+          <div class="info-pill-label">Available Slots</div>
+          <div class="info-pill-value" id="infoAvailable">0</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="card" style="padding: var(--sp-4) var(--sp-5); margin-bottom: var(--sp-6); display:none;" id="completedNotice">
+      <span class="body-text">This camp has already been completed. </span>
+      <a id="pastCampLink" href="#">View past camp details instead →</a>
+    </div>
+
+    <!-- Filters -->
+    <section class="card filters-card">
+      <div class="filters-row">
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="input-field" type="text" id="searchInput" placeholder="Search by Patient Name or Registration ID">
+        </div>
+        <div class="filter-field">
+          <label class="field-label" for="statusFilter">Registration Status</label>
+          <div class="select-wrap">
+            <select class="input-field" id="statusFilter">
+              <option value="All">All</option>
+              <option value="Registered">Registered</option>
+              <option value="Pending">Pending</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="card table-card">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Registration ID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Registration Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="patientsBody"></tbody>
+      </table>
+
+      <div class="pagination-bar">
+        <span class="pagination-meta" id="paginationMeta">Showing 0 of 0 patients</span>
+
+        <div style="display:flex; align-items:center; gap: var(--sp-4); flex-wrap: wrap;">
+          <button class="btn btn-secondary btn-sm" id="downloadExcelBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+            Download Excel
+          </button>
+
+          <div class="page-btns" id="pageBtns"></div>
+
+          <div class="select-wrap">
+            <select class="input-field page-size-select" id="pageSizeSelect">
+              <option value="10">10 / page</option>
+              <option value="20">20 / page</option>
+              <option value="50">50 / page</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Patient detail modal -->
+<div class="modal-overlay" id="patientModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModalBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-title" id="modalPatientName">Patient Name</div>
+    <div class="modal-subtitle" id="modalRegId">Registration ID</div>
+    <div class="modal-detail-grid">
+      <div class="modal-detail-item">
+        <div class="dl-label">Age</div>
+        <div class="dl-value" id="modalAge">—</div>
+      </div>
+      <div class="modal-detail-item">
+        <div class="dl-label">Gender</div>
+        <div class="dl-value" id="modalGender">—</div>
+      </div>
+      <div class="modal-detail-item">
+        <div class="dl-label">Phone Number</div>
+        <div class="dl-value" id="modalPhone">—</div>
+      </div>
+      <div class="modal-detail-item">
+        <div class="dl-label">Status</div>
+        <div class="dl-value" id="modalStatus">—</div>
+      </div>
+      <div class="modal-detail-item full">
+        <div class="dl-label">Registration Date</div>
+        <div class="dl-value" id="modalRegDate">—</div>
+      </div>
+      <div class="modal-detail-item full">
+        <div class="dl-label">Camp</div>
+        <div class="dl-value" id="modalCampName">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <span id="toastMsg">Done.</span>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  let campId = params.get('id');
+
+  let camp = campId ? getCampById(campId) : null;
+  if (!camp) {
+    // fall back to the first non-completed camp so the page is demo-able directly
+    camp = getCamps().find(c => c.status !== 'completed');
+    campId = camp ? camp.id : null;
+  }
+
+  let allPatients = campId ? getPatientsByCamp(campId) : [];
+  let filtered = [...allPatients];
+  let currentPage = 1;
+  let pageSize = 10;
+
+  function statusBadge(status) {
+    if (status === 'Registered') return '<span class="badge badge-success">Registered</span>';
+    if (status === 'Pending') return '<span class="badge badge-warning">Pending</span>';
+    if (status === 'Attended') return '<span class="badge badge-info">Attended</span>';
+    return `<span class="badge badge-rating">${status}</span>`;
+  }
+
+  function renderSummary() {
+    if (!camp) {
+      document.getElementById('infoCampId').textContent = 'No camp found';
+      return;
+    }
+    document.getElementById('infoCampId').textContent = camp.id;
+    document.getElementById('infoCampName').textContent = camp.name;
+    document.getElementById('infoTotalReg').textContent = allPatients.length;
+    const available = Math.max((camp.capacity || 0) - allPatients.filter(p => p.status !== 'Cancelled').length, 0);
+    document.getElementById('infoAvailable').textContent = available;
+
+    if (camp.status === 'completed') {
+      document.getElementById('completedNotice').style.display = 'block';
+      document.getElementById('pastCampLink').href = `past-camp-details.html?id=${camp.id}`;
+    }
+  }
+
+  function applyFilters() {
+    const q = document.getElementById('searchInput').value.trim().toLowerCase();
+    const statusVal = document.getElementById('statusFilter').value;
+
+    filtered = allPatients.filter(p => {
+      const matchesQuery = !q || p.name.toLowerCase().includes(q) || p.id.toLowerCase().includes(q);
+      const matchesStatus = statusVal === 'All' || p.status === statusVal;
+      return matchesQuery && matchesStatus;
+    });
+    currentPage = 1;
+    renderTable();
+  }
+
+  function renderTable() {
+    const body = document.getElementById('patientsBody');
+    const total = filtered.length;
+    const totalPages = Math.max(Math.ceil(total / pageSize), 1);
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const start = (currentPage - 1) * pageSize;
+    const pageItems = filtered.slice(start, start + pageSize);
+
+    if (pageItems.length === 0) {
+      body.innerHTML = `<tr class="empty-row"><td colspan="8">No patients match your search or filter.</td></tr>`;
+    } else {
+      body.innerHTML = pageItems.map(p => `
+        <tr>
+          <td>${p.id}</td>
+          <td>${p.name}</td>
+          <td>${p.age}</td>
+          <td>${p.gender}</td>
+          <td>${p.phone}</td>
+          <td>${fmtDateTime(p.regAt)}</td>
+          <td>${statusBadge(p.status)}</td>
+          <td>
+            <button class="btn btn-primary btn-sm view-patient-btn" data-id="${p.id}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View
+            </button>
+          </td>
+        </tr>`).join('');
+    }
+
+    const shownFrom = total === 0 ? 0 : start + 1;
+    const shownTo = Math.min(start + pageSize, total);
+    document.getElementById('paginationMeta').textContent = `Showing ${shownFrom} to ${shownTo} of ${total} patients`;
+
+    renderPageButtons(totalPages);
+
+    document.querySelectorAll('.view-patient-btn').forEach(btn => {
+      btn.addEventListener('click', () => openPatientModal(btn.getAttribute('data-id')));
+    });
+  }
+
+  function renderPageButtons(totalPages) {
+    const wrap = document.getElementById('pageBtns');
+    let html = `<button class="page-btn" id="prevPageBtn" ${currentPage === 1 ? 'disabled' : ''} aria-label="Previous page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>`;
+
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+    }
+
+    html += `<button class="page-btn" id="nextPageBtn" ${currentPage === totalPages ? 'disabled' : ''} aria-label="Next page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>`;
+
+    wrap.innerHTML = html;
+
+    document.querySelectorAll('.page-btn[data-page]').forEach(btn => {
+      btn.addEventListener('click', () => { currentPage = Number(btn.getAttribute('data-page')); renderTable(); });
+    });
+    const prevBtn = document.getElementById('prevPageBtn');
+    const nextBtn = document.getElementById('nextPageBtn');
+    if (prevBtn) prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderTable(); } });
+    if (nextBtn) nextBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; renderTable(); } });
+  }
+
+  function openPatientModal(id) {
+    const p = allPatients.find(pt => pt.id === id);
+    if (!p) return;
+    document.getElementById('modalPatientName').textContent = p.name;
+    document.getElementById('modalRegId').textContent = p.id;
+    document.getElementById('modalAge').textContent = p.age;
+    document.getElementById('modalGender').textContent = p.gender;
+    document.getElementById('modalPhone').textContent = p.phone;
+    document.getElementById('modalStatus').textContent = p.status;
+    document.getElementById('modalRegDate').textContent = fmtDateTime(p.regAt);
+    document.getElementById('modalCampName').textContent = camp ? `${camp.name} (${camp.id})` : '—';
+    document.getElementById('patientModal').classList.add('open');
+  }
+
+  document.getElementById('closeModalBtn').addEventListener('click', () => {
+    document.getElementById('patientModal').classList.remove('open');
+  });
+  document.getElementById('patientModal').addEventListener('click', (e) => {
+    if (e.target.id === 'patientModal') document.getElementById('patientModal').classList.remove('open');
+  });
+
+  document.getElementById('searchInput').addEventListener('input', applyFilters);
+  document.getElementById('statusFilter').addEventListener('change', applyFilters);
+  document.getElementById('pageSizeSelect').addEventListener('change', (e) => {
+    pageSize = Number(e.target.value);
+    currentPage = 1;
+    renderTable();
+  });
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2600);
+  }
+
+  document.getElementById('downloadExcelBtn').addEventListener('click', () => {
+    if (filtered.length === 0) { showToast('No patients to export.'); return; }
+    let table = '<table border="1"><tr><th>Registration ID</th><th>Patient Name</th><th>Age</th><th>Gender</th><th>Phone Number</th><th>Registration Date</th><th>Status</th></tr>';
+    filtered.forEach(p => {
+      table += `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.age}</td><td>${p.gender}</td><td>${p.phone}</td><td>${fmtDateTime(p.regAt)}</td><td>${p.status}</td></tr>`;
+    });
+    table += '</table>';
+    const blob = new Blob(['\ufeff' + table], { type: 'application/vnd.ms-excel' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `${camp ? camp.id : 'camp'}-registered-patients.xls`;
+    link.click();
+    showToast('Export started.');
+  });
+
+  renderSummary();
+  applyFilters();
+</script>
+</body>
+</html>
