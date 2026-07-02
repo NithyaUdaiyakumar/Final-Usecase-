@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curonex | View Camp Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <button class="icon-btn" id="sidebarToggle" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="brand">
+        <svg class="brand-mark" width="28" height="28" viewBox="0 0 100 100" fill="none">
+          <path d="M50 88 C20 68, 6 50, 6 32 C6 16, 20 6, 34 6 C42 6, 48 12, 50 18 C52 12, 58 6, 66 6 C80 6, 94 16, 94 32 C94 50, 80 68, 50 88 Z" fill="white" opacity="0.15"/>
+          <path d="M50 78 C26 62, 14 47, 14 32 C14 20, 24 12, 34 12 C41 12, 47 17, 50 24 C53 17, 59 12, 66 12 C76 12, 86 20, 86 32 C86 47, 74 62, 50 78 Z" stroke="white" stroke-width="6" fill="none"/>
+          <path d="M50 40 V64 M38 52 H62" stroke="white" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Curonex</span>
+          <span class="brand-tag">Medical Camp Management</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="navbar-right">
+      <button class="icon-btn" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="notif-dot"></span>
+      </button>
+      <div class="user-menu">
+        <span class="avatar">AD</span>
+        <span class="user-name">Admin User</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="side-nav">
+        <a href="#" class="side-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Appointment Scheduling
+        </a>
+        <a href="#" class="side-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="7" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="2"/></svg>
+          Pharmacy
+        </a>
+        <a href="#" class="side-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-5 4 10 2-5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Emergency Service
+        </a>
+        <a href="#" class="side-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 21V9l9-6 9 6v12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="2"/></svg>
+          Critical Resource Service
+        </a>
+        <a href="#" class="side-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 6-9 6-9-6 9-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 15v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Medical Camp
+        </a>
+      </nav>
+
+      <div class="help-card">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9.5 9a2.5 2.5 0 1 1 3.7 2.2c-.8.5-1.2.9-1.2 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="0.8" fill="currentColor"/></svg>
+        <div>
+          <strong>Need Help?</strong>
+          <a href="#">Support Center</a>
+          <p>We are here to help you 24/7</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-8 9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Dashboard
+        </a>
+        <span class="crumb-sep">›</span>
+        <span class="crumb-current">View Camp Data</span>
+      </div>
+
+      <h1 class="page-title">View Camp Data</h1>
+
+      <section class="card table-card">
+        <div class="table-toolbar">
+          <div class="search-field">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="text" id="searchInput" placeholder="Search by Camp ID or Camp Name" autocomplete="off">
+          </div>
+
+          <div class="status-field">
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter">
+              <option value="all">All</option>
+              <option value="Upcoming">Upcoming</option>
+              <option value="Ongoing">Ongoing</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="camp-table">
+            <thead>
+              <tr>
+                <th>Camp ID</th>
+                <th>Camp Name</th>
+                <th>Camp Type</th>
+                <th>Date</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Total Registrations</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="campTableBody">
+              <!-- rows injected by script.js -->
+            </tbody>
+          </table>
+          <div class="empty-state" id="emptyState" hidden>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <p>No camps match your search or filter.</p>
+          </div>
+        </div>
+
+        <div class="table-footer">
+          <span class="results-text" id="resultsText">Showing 0 to 0 of 0 camps</span>
+
+          <div class="pagination" id="pagination"></div>
+
+          <div class="page-size-field">
+            <select id="pageSizeSelect">
+              <option value="10">10 / page</option>
+              <option value="25">25 / page</option>
+              <option value="50">50 / page</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- View Camp Modal -->
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle">Camp Details</h2>
+        <button class="icon-btn" id="modalClose" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
